@@ -1,21 +1,21 @@
 import React from 'react';
-import { Link, Routes } from 'react-router-dom';
-import './style.css';
+import { Link,Routes,Route } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import Registeration from './Registeration';
 import AdminLogin from './AdminLogin';
 import ManagerLogin from './ManagerLogin';
 import CustomerLogin from './CustomerLogin';
-import { Route } from 'react-router-dom';
+import './style.css';
 
 const MainNavBar = () => {
   return (
+    <div>
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
           <Link to="/" className="logo-link">
-          KL Event Management System-2500030997
+            Event Management System
           </Link>
         </div>
         <ul className="nav-menu">
@@ -30,7 +30,7 @@ const MainNavBar = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/registration" className="nav-link">
+            <Link to="/registeration" className="nav-link">
               Registration
             </Link>
           </li>
@@ -57,17 +57,21 @@ const MainNavBar = () => {
             </ul>
           </li>
         </ul>
-          <Routes>
+      </div>
+    </nav>
+
+<Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/registration" element={<Registeration />} />
+        <Route path="/registeration" element={<Registeration />} />
         <Route path="/admin-login" element={<AdminLogin />} />
         <Route path="/manager-login" element={<ManagerLogin />} />
         <Route path="/customer-login" element={<CustomerLogin />} />
       </Routes>
-   
-      </div>
-    </nav>
+
+
+    </div>
+
   );
 };
 
