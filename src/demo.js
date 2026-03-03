@@ -1,1 +1,2 @@
-console.log("i am in demo.js")
+console.log("i am in demo.")
+console.log("Hello Git")
