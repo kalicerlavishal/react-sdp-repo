@@ -6,7 +6,7 @@ export default function ViewCustomers() {
   const [deleteMessage, setDeleteMessage] = useState('');
 
   useEffect(() => {
-    const storedCustomers = JSON.parse(localStorage.getItem('customerRegisterations')) || [];
+    const storedCustomers = JSON.parse(localStorage.getItem('customerRegistrations')) || [];
     setCustomers(storedCustomers);
   }, []);
 
@@ -14,7 +14,7 @@ export default function ViewCustomers() {
     if (window.confirm(`Are you sure you want to delete customer with ID ${customerId}? This action cannot be undone.`)) {
       const updatedCustomers = customers.filter(customer => customer.id !== customerId);
       setCustomers(updatedCustomers);
-      localStorage.setItem('customerRegisterations', JSON.stringify(updatedCustomers));
+      localStorage.setItem('customerRegistrations', JSON.stringify(updatedCustomers));
       setDeleteMessage(`Customer with ID ${customerId} has been deleted successfully.`);
       setTimeout(() => setDeleteMessage(''), 3000);
     }
